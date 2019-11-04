@@ -1,5 +1,5 @@
 <template>
-	<div class="home">
+	<div class="home" v-if="data.data">
 		<van-tabs v-model="active">
 			<van-tab v-for="item in data.data.tabs" :title="item.name">{{item.name}}</van-tab>
 		</van-tabs>
@@ -17,7 +17,7 @@
 		<van-grid icon-size="72px" :column-num="5">
 			<van-grid-item
 				v-for="value in data.data.data.sections[1].body.items"
-				:key="value"
+				:key="value.img_url_webp"
 				:icon="value.img_url_webp"
 				
 			/>
@@ -26,7 +26,7 @@
 		<van-grid icon-size="72px" :column-num="5">
 			<van-grid-item
 				v-for="value in data.data.data.sections[2].body.items"
-				:key="value"
+				:key="value.img_url_webp"
 				:icon="value.img_url_webp"
 				
 			/>

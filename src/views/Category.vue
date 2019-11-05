@@ -3,7 +3,7 @@
   
 		<!-- 顶部导航 -->
 		<div class="header">
-			<van-nav-bar z-index=20 title="分类" left-arrow   @click-left="onClickLeft" @click-right="onClickRight">
+			<van-nav-bar  title="分类" left-arrow   @click-left="onClickLeft" @click-right="onClickRight">
 				<van-icon name="search" slot="right" />
 			</van-nav-bar>
 		</div>
@@ -38,6 +38,8 @@
 										
 										:icon="item2.img_url_webp"
 										:text="item2.product_name"
+										
+										@click = "goToProduct(item2.action.path)"
 									/>
 								</van-grid>
 								
@@ -68,6 +70,11 @@
 							};
 						},
 		methods:{
+			goToProduct(path){
+				// console.log("+++++");
+				// alert("hello")
+				this.$router.push(`/product/${path}`)
+			},
 			onClickLeft() {
 				this.$router.go(-1);
 			},

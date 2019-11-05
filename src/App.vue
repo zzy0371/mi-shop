@@ -3,7 +3,7 @@
 
     <router-view/>
 		
-		<van-tabbar v-model="active">
+		<van-tabbar z-index=20 v-model="active">
 			<van-tabbar-item to="/" icon="home-o">首页</van-tabbar-item>
 			<van-tabbar-item to="/category" icon="search">分类</van-tabbar-item>
 			<van-tabbar-item to="/category" icon="shopping-cart-o">购物车</van-tabbar-item>
